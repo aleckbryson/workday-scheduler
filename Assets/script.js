@@ -8,10 +8,6 @@ var timeSlots = {
 
 
 var timeDiv = $(".time-block");
-var description = $(".description")
 
-$.each(timeSlots, function(i, time) {
-timeDiv.append("<div>" + time + "</div>");
-});
 
 
