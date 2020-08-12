@@ -61,6 +61,7 @@ function hourNumber(houText) {
     }
   })
 
+  //On click button added to save content in the text area
   $("button").click(function() {
     value = $(this).siblings("textarea").val();
     houText = $(this).siblings("div").text();
@@ -68,6 +69,7 @@ function hourNumber(houText) {
     taskSave(houText, value);
   });
   
+
   function loadLocal() {
     result = localStorage.getItem(timeSlots)
     return (result ? result : timeSlots);
@@ -81,6 +83,7 @@ function hourNumber(houText) {
     localStorage.setItem(timeSlots, JSON.stringify(object));
   }
   
+  //Function created to save the logged
   function taskSave(houText, val) {
     if(!localStorage.getItem(timeSlots)) {
       callLocal();
