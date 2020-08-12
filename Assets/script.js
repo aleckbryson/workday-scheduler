@@ -12,7 +12,7 @@ var counter = 1;
 for(var i = 0; i < timeSlots.length; i++) {
   var entry = "#entry-" + counter;
   $(entry).text(timeSlots[i]);
-  var slot = "#slot-" + counter;
+  var slot = "#timeslot-" + counter;
   var currentHour = moment().hour();
   var timeString = $(slot).text();
   var timeNum = hourNumber(timeString);  
