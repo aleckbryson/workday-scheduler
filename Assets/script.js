@@ -8,6 +8,26 @@ var timeSlots = {
 
 var timeDiv = $(".time-block");
 
+var counter = 1;
+for(var i = 0; i < timeSlots.length; i++) {
+  var entry = "#entry-" + counter;
+  $(entry).text(timeSlots[i]);
+  var slot = "#slot-" + counter;
+  var currentHour = moment().hour();
+  var timeString = $(slot).text();
+  var timeNum = hourNumber(timeString);  
+
+  if(timeNum < currentHour) {
+    $(entry).addClass("past");
+  } else if (timeNum > currentHour) {
+    $(entry).addClass("future");
+  } else {
+    $(entry).addClass("present");
+  }
+  counter ++;
+}
+
+
 function hourNumber(houText) {
     switch(houText) {
       case "8 AM": 
